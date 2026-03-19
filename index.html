@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Privacy Shield</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:      #1D9E75;
+      --teal-dark: #0F6E56;
+      --teal-pale: #E1F5EE;
+      --ink:       #0f1117;
+      --muted:     #6b7280;
+      --border:    #e5e7eb;
+      --bg:        #fafaf8;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .topbar-shield {
+      width: 28px; height: 28px;
+    }
+
+    .topbar-name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500; font-size: 15px;
+      color: var(--teal-dark);
+    }
+
+    .topbar-sep { margin-left: auto; }
+
+    .topbar-label {
+      font-size: 12px; color: var(--muted);
+      background: var(--teal-pale);
+      padding: 3px 12px; border-radius: 20px;
+      color: var(--teal-dark); font-weight: 500;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+      padding: 72px 32px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-shield {
+      width: 64px; height: 64px; margin: 0 auto 20px;
+      position: relative; z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      color: #fff; font-weight: 400;
+      line-height: 1.2; margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+
+    .hero-sub {
+      font-size: 15px; color: #9FE1CB;
+      max-width: 480px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+
+    .hero-date {
+      margin-top: 24px;
+      font-size: 12px; color: #5DCAA5;
+      position: relative; z-index: 1;
+    }
+
+    /* ── Core promise banner ── */
+    .promise {
+      background: var(--teal-pale);
+      border-left: 4px solid var(--teal);
+      margin: 48px auto 0;
+      max-width: 720px;
+      padding: 20px 28px;
+      border-radius: 0 12px 12px 0;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+
+    .promise-icon { flex-shrink: 0; margin-top: 2px; }
+
+    .promise-text {
+      font-size: 15px; color: var(--teal-dark); line-height: 1.6;
+    }
+
+    .promise-text strong { font-weight: 500; }
+
+    /* ── Content ── */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 52px; }
+
+    .section-num {
+      font-size: 11px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px; font-weight: 400;
+      color: var(--ink); margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: 15px; color: #374151;
+      margin-bottom: 14px; line-height: 1.75;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-row {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .highlight-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .highlight-row:first-child { padding-top: 0; }
+
+    .hl-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 7px;
+    }
+
+    .hl-dot.green  { background: #16A34A; }
+    .hl-dot.red    { background: #DC2626; }
+
+    .hl-text { font-size: 14px; color: #374151; line-height: 1.6; }
+    .hl-text strong { color: var(--ink); font-weight: 500; }
+
+    /* ── Table ── */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px; margin: 20px 0;
+    }
+
+    .data-table th {
+      text-align: left; padding: 10px 14px;
+      background: #f3f4f6; font-weight: 500;
+      font-size: 12px; text-transform: uppercase;
+      letter-spacing: .05em; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table th:first-child { border-radius: 8px 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 8px 0 0; }
+
+    .data-table td {
+      padding: 11px 14px; border-bottom: 1px solid var(--border);
+      color: #374151; vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: #fafafa; }
+
+    .badge {
+      display: inline-block; font-size: 11px; font-weight: 500;
+      padding: 2px 8px; border-radius: 10px;
+    }
+
+    .badge-never  { background: #DCFCE7; color: #14532D; }
+    .badge-local  { background: #DBEAFE; color: #1E3A8A; }
+    .badge-session{ background: #FEF3C7; color: #78350F; }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      font-size: 14px; color: var(--muted); margin-bottom: 16px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff; text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      padding: 10px 28px; border-radius: 8px;
+      transition: background .2s;
+    }
+
+    .contact-link:hover { background: var(--teal-dark); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 12px; color: var(--muted);
+    }
+
+    footer a { color: var(--teal); text-decoration: none; }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px; background: var(--border);
+      margin: 48px 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .content { padding: 32px 20px 60px; }
+      .promise { margin: 32px 20px 0; }
+      .topbar { padding: 12px 20px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<nav class="topbar">
+  <svg class="topbar-shield" viewBox="0 0 24 24" fill="none">
+    <path d="M12 2L4 6v6c0 5.2 3.6 9.7 8 11 4.4-1.3 8-5.8 8-11V6L12 2z" fill="#1D9E75"/>
+    <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="topbar-name">Privacy Shield</span>
+  <span class="topbar-sep"></span>
+  <span class="topbar-label">Privacy Policy</span>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <svg class="hero-shield" viewBox="0 0 24 24" fill="none">
+    <path d="M12 2L4 6v6c0 5.2 3.6 9.7 8 11 4.4-1.3 8-5.8 8-11V6L12 2z" fill="rgba(255,255,255,0.2)" stroke="#fff" stroke-width="1"/>
+    <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <h1>Privacy Policy</h1>
+  <p class="hero-sub">Privacy Shield is a tracker blocker. This policy explains exactly what data the extension touches — and what it never touches.</p>
+  <p class="hero-date">Effective date: March 2026 &nbsp;·&nbsp; Version 1.0</p>
+</div>
+
+<!-- Core promise -->
+<div style="max-width:720px;margin:0 auto;padding:0 32px;">
+  <div class="promise">
+    <div class="promise-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L4 6v6c0 5.2 3.6 9.7 8 11 4.4-1.3 8-5.8 8-11V6L12 2z" fill="#1D9E75"/>
+        <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="promise-text">
+      <strong>The short version:</strong> Privacy Shield does not collect, store, transmit, or share any personal data, browsing history, or user information. Everything happens locally inside your browser. Nothing ever leaves your device.
+    </p>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="content">
+
+  <!-- 1. Overview -->
+  <div class="section">
+    <div class="section-num">01</div>
+    <h2>What Privacy Shield does</h2>
+    <p>Privacy Shield is a Chrome extension that automatically blocks tracking scripts, advertising pixels, and data broker requests on every website you visit. It uses Chrome's built-in <code>declarativeNetRequest</code> API to cancel network requests to known tracker domains before they leave your device.</p>
+    <p>The extension also displays a popup showing which trackers were blocked on the current page, your privacy score, and the categories of trackers detected. This information is derived entirely from local processing — no external service is involved.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2. Data we do not collect -->
+  <div class="section">
+    <div class="section-num">02</div>
+    <h2>Data we never collect</h2>
+    <p>Privacy Shield does not collect any of the following:</p>
+
+    <div class="highlight">
+      <div class="highlight-row">
+        <div class="hl-dot red"></div>
+        <div class="hl-text"><strong>Browsing history</strong> — URLs you visit are never recorded or transmitted anywhere.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot red"></div>
+        <div class="hl-text"><strong>Personal information</strong> — No name, email, IP address, or any identifying data is collected.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot red"></div>
+        <div class="hl-text"><strong>Page content</strong> — The extension never reads, accesses, or transmits the content of any webpage you visit.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot red"></div>
+        <div class="hl-text"><strong>Search queries</strong> — No search terms or form inputs are accessed.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot red"></div>
+        <div class="hl-text"><strong>Cookies or credentials</strong> — No cookies, passwords, or session tokens are read or stored.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot red"></div>
+        <div class="hl-text"><strong>Analytics or telemetry</strong> — No usage data, crash reports, or feature metrics are sent anywhere.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3. Data stored locally -->
+  <div class="section">
+    <div class="section-num">03</div>
+    <h2>Data stored locally on your device</h2>
+    <p>Privacy Shield stores two minimal pieces of data entirely on your device using Chrome's local storage APIs. Neither is ever transmitted off your device.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>What</th>
+          <th>Where</th>
+          <th>Why</th>
+          <th>Cleared when</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ON/OFF preference<br><small style="color:#6b7280">One boolean value</small></td>
+          <td><span class="badge badge-local">chrome.storage.local</span></td>
+          <td>Remember if you turned blocking on or off</td>
+          <td>You uninstall the extension</td>
+        </tr>
+        <tr>
+          <td>Matched rule IDs<br><small style="color:#6b7280">Integers, no URLs</small></td>
+          <td><span class="badge badge-session">chrome.storage.session</span></td>
+          <td>Show blocked tracker count in the popup</td>
+          <td>Tab closes or browser restarts</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The matched rule IDs are integer numbers (e.g. 14, 37, 92) that correspond to tracker entries in the bundled block list. They contain no URLs, no site names, and no user-identifiable information.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4. Permissions -->
+  <div class="section">
+    <div class="section-num">04</div>
+    <h2>Permissions explained</h2>
+    <p>Privacy Shield requests four Chrome permissions. Here is exactly why each is needed:</p>
+
+    <div class="highlight">
+      <div class="highlight-row">
+        <div class="hl-dot green"></div>
+        <div class="hl-text"><strong>declarativeNetRequest</strong> — Enables the 111 blocking rules. Without this, no tracker can be blocked.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot green"></div>
+        <div class="hl-text"><strong>declarativeNetRequestFeedback</strong> — Reads which rule IDs matched on the current tab so the popup can display blocked tracker names. No URLs or content are read.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot green"></div>
+        <div class="hl-text"><strong>storage</strong> — Stores the ON/OFF preference locally and caches matched rule IDs per tab temporarily.</div>
+      </div>
+      <div class="highlight-row">
+        <div class="hl-dot green"></div>
+        <div class="hl-text"><strong>tabs</strong> — Reads the active tab's URL to display the hostname in the popup header (e.g. "nytimes.com") and to key the session cache by tab ID.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5. No remote code -->
+  <div class="section">
+    <div class="section-num">05</div>
+    <h2>No remote code, no external servers</h2>
+    <p>Privacy Shield contains no remote code. All JavaScript is bundled inside the extension package. There are no external script tags, no CDN imports, no <code>eval()</code> calls, and no connections to any server operated by the developer.</p>
+    <p>The only network operations the extension performs are blocking outgoing requests from the websites you visit — it never makes outgoing requests of its own.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6. Third parties -->
+  <div class="section">
+    <div class="section-num">06</div>
+    <h2>Third-party services</h2>
+    <p>Privacy Shield does not integrate with, send data to, or use any third-party analytics, crash reporting, advertising, or data services. There are no SDKs, no tracking pixels, and no external dependencies in the extension code.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7. Children -->
+  <div class="section">
+    <div class="section-num">07</div>
+    <h2>Children's privacy</h2>
+    <p>Privacy Shield does not collect any personal information from anyone, including children under the age of 13. The extension is a passive blocking tool with no user accounts, no data submission, and no communication features.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 8. Changes -->
+  <div class="section">
+    <div class="section-num">08</div>
+    <h2>Changes to this policy</h2>
+    <p>If this privacy policy is updated, the new version will be published at this URL with an updated effective date. Since the extension collects no personal data, material changes are unlikely. Any change that affects data handling will be noted prominently at the top of this page.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 9. Contact -->
+  <div class="section">
+    <div class="section-num">09</div>
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <h3>Questions about this policy?</h3>
+      <p>If you have any questions about how Privacy Shield handles data, open an issue on the GitHub repository or contact via the Chrome Web Store developer page.</p>
+      <a href="https://github.com" class="contact-link">Open GitHub Repository</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Privacy Shield &nbsp;·&nbsp; Chrome Extension &nbsp;·&nbsp; <a href="#">Back to top</a></p>
+  <p style="margin-top:6px">This extension collects no personal data. This policy exists for transparency, not because there is data to disclose.</p>
+</footer>
+
+</body>
+</html>
